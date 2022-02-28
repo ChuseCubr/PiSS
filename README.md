@@ -6,7 +6,7 @@ I use it for taskbar toolbars. Don't use it on anything that's depended on (prog
 
 ## Usage
 
-```shell
+```
 PIN [-h] [--top | --remove | --up | --down] item_name
 ```
 
