@@ -1,4 +1,4 @@
-# PiSS
+# PiSS (Pinning and Sorting Script)
 
 Niche file managing script for pinning files to the top of name-ordered folders.
 
