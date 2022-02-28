@@ -1,6 +1,6 @@
 # PiSS (Pinning and Sorting Script)
 
-Niche file managing script for pinning files to the top of name-ordered folders.
+Niche file managing script for pinning files to the top of name-ordered folders using zero width spaces.
 
 I use it for taskbar toolbars. Don't use it on anything that's depended on (program files, etc.)
 
