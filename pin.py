@@ -1,22 +1,21 @@
 import os, argparse
 
 def main(args):
-    def _get_top_plvl():
-        top_dir_plvl = top_file_plvl = tdp_count = tfp_count = 0
-        for root, dirs, files in os.walk(os.getcwd(), topdown=False):
-            for dir_name in dirs:
-                if dir_name.count("\u200b") == top_dir_plvl:
-                    tdp_count += 1
-                if dir_name.count("\u200b") > top_dir_plvl:
-                    top_dir_plvl = dir_name.count("\u200b")
-                    tdp_count = 1
+    def _count_top_plvl(arr):
+        top_val_plvl = tvp_count = 0
+        for val in arr:
+            if val.count("\u200b") == top_val_plvl:
+                tvp_count += 1
+            if val.count("\u200b") > top_val_plvl:
+                top_val_plvl = val.count("\u200b")
+                tvp_count = 1
 
-            for file_name in files:
-                if file_name.count("\u200b") == top_file_plvl:
-                    tfp_count += 1
-                if file_name.count("\u200b") > top_file_plvl:
-                    top_file_plvl = file_name.count("\u200b")
-                    tfp_count = 1
+        return top_val_plvl, tvp_count
+
+    def _get_top_plvl():
+        for root, dirs, files in os.walk(os.getcwd(), topdown=False):
+            top_dir_plvl, tdp_count = _count_top_plvl(dirs)
+            top_file_plvl, tfp_count = _count_top_plvl(files)
 
         if ((os.path.isdir(item_name)
                 and item_name.count("​") == top_dir_plvl
